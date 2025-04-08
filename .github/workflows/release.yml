@@ -1,4 +1,6 @@
 name: Build JAR on release
+permissions:
+  contents: write
 
 on:
   push:
