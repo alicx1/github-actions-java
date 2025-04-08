@@ -14,6 +14,9 @@ jobs:
       - name: Decode kubeconfig
         run: echo "${{ secrets.KUBECONFIG_BASE64 }}" | base64 -d > kubeconfig.yaml
 
+      - name: Set KUBECONFIG env variable
+        run: echo "KUBECONFIG=$PWD/kubeconfig.yaml" >> $GITHUB_ENV
+
       - name: Set kubeconfig
         run: export KUBECONFIG=$PWD/kubeconfig.yaml
 
